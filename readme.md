@@ -18,6 +18,7 @@ Now check out the WebApp in a browser at http://localhost:8080/ or start hitting
 
 From the root directory, with npm installed run: 
 ```
+npm install
 npm start
 ```
 
