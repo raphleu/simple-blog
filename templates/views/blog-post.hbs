@@ -11,11 +11,15 @@
 <body>
     <div class="main-content">
         {{>header}}
-
-        <h2 id='blog-post-title'></h2>
-        <p id='blog-post-body'></p>
-        <h3 id='comments-title'>Comments</h3>
-        <ol id='blog-post-comments'></ol>
+        <div class='blog-post-contents'>
+            <div class='blog-post-title-div'>
+                <h2 id='blog-post-title'></h2>
+            </div>
+            <div>
+            <p id='blog-post-body'></p>
+            <h3 id='comments-title'>Comments</h3>
+            <ol id='blog-post-comments'></ol>
+        </div>
     </div>
 
     {{>footer}}

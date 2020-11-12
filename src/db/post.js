@@ -12,6 +12,10 @@ const posts = [
     new Post({
         title: "Favorite Zurich restaurants", 
         body: "Zurich is not the place for cheap eats...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis nibh vel libero porttitor, at tristique mi tristique. In eros erat, hendrerit nec sem non, pulvinar convallis enim. Donec eleifend molestie maximus. Nulla facilisi. Cras pulvinar malesuada enim. Nunc odio dolor, vehicula ac felis id, hendrerit mattis nibh. Phasellus at dui commodo, placerat dolor vel, facilisis libero. Ut vestibulum orci ultricies condimentum facilisis. Integer quis sodales mi, sit amet semper velit. Sed porttitor nisi tellus, eget ultrices nunc finibus eget. Suspendisse eu elit efficitur, finibus erat placerat, dignissim neque. Donec mauris quam, scelerisque vitae porta mollis, tincidunt a libero. Vestibulum pellentesque mollis consectetur.",
+    }),
+    new Post({
+        title: "What I've already learned at TX Group", 
+        body: "I hope to write this in the future!!",
     })
 ]
 

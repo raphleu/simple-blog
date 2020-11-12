@@ -14,4 +14,11 @@ router.get('/view/post/', (req, res) => {
     })
 })
 
+router.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        errorMessage: 'Page not found.'
+    })
+})
+
 module.exports = router

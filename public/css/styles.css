@@ -1,13 +1,13 @@
 body {
-    color: #333333;
+    color: #2D5362;
     font-family: arial;
     max-width: 80%;
     margin: 0 auto;
-    padding: 0 16px;
-
+    font-size: large;
     display: flex;
     flex-direction: column;
-    min-height: 100vh
+    min-height: 100vh;
+    background-color: beige;
 }
 
 .main-content {
@@ -15,26 +15,26 @@ body {
 }
 
 footer {
-    color: #888888;
-    border-top: 1px solid #eeeeee;
-    margin-top: 16px;
-    padding: 16px 0;
+    color: #808080;
+    border-top: 1px solid #2D5362;
+    margin-top: 1em;
+    padding: .5em 0;
 }
 
 header {
-    margin-top: 16px;
-    margin-bottom: 36px;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 header a {
-    color: #888888;
-    margin-right: 16px;
+    color: #2a9d8f;
+    margin-right: 1em;
     text-decoration: none;
 }
 
 h1 {
-    font-size: 64px;
-    margin-bottom: 16px;
+    font-size: 4em;
+    color: #e76f51;
 }
 
 #blog-posts {
@@ -43,8 +43,16 @@ h1 {
 }
 
 .blog-post-list-element a {
-    color: #333333;
+    color: #2D5362;
     text-decoration: none;
+    font-size: 32px;
+}
+
+.blog-post-list-element {
+    margin-top: 1em;
+    background-color: #F4A261;
+    padding: 1em;
+    border-radius: 1em;
 }
 
 #blog-post-comments {
@@ -58,8 +66,8 @@ h1 {
 }
 
 .comment-count {
+    font-size: smaller;
     margin-top: 1em;
-    font-style: italic;
 }
 
 .comment-name-div {
@@ -70,4 +78,26 @@ h1 {
 
 .comment-text-div {
     overflow-wrap: break-word;
+}
+
+#blog-post-title {
+    font-size: 32px;
+}
+
+.blog-post-title-div {
+    margin-top: 1em;
+}
+
+.footer-text {
+    color: #e76f51;
+}
+
+.blog-post-contents {
+    background-color: #F4A261;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+#comments-title {
+    margin-top: 2em;
 }

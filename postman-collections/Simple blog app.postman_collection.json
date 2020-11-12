@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "8846b1f5-028a-4375-9f1d-50ca888edd69",
+		"name": "Simple blog app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "013e35e9-6a48-4b73-9971-5d07d5e5a410",
+						"exec": [
+							"let jsonData = pm.response.json();",
+							"pm.environment.set(\"nonStringPostId1\", jsonData[0][\"id\"]);",
+							"pm.environment.set(\"postId1\", JSON.stringify(jsonData[0][\"id\"]));",
+							"pm.environment.set(\"postId2\", JSON.stringify(jsonData[1][\"id\"]));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{appAddress}}/posts",
+					"host": [
+						"{{appAddress}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{appAddress}}/post/{{nonStringPostId1}}",
+					"host": [
+						"{{appAddress}}"
+					],
+					"path": [
+						"post",
+						"{{nonStringPostId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"A comment can have a lot of text. A comment can have a lot of text. A comment can have a lot of text. A comment can have a lot of text.\",\n    \"name\": \"This is a comment\",\n    \"postId\" : {{postId1}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appAddress}}/comments",
+					"host": [
+						"{{appAddress}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comment for same post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"A comment can have little text.\",\n    \"name\": \"This is another comment\",\n    \"postId\" : {{postId1}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appAddress}}/comments",
+					"host": [
+						"{{appAddress}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comment without name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e2a68162-0f69-4a3d-9e36-811348b73064",
+						"exec": [
+							"let jsonData = pm.response.json();",
+							"pm.environment.set(\"commentId1\", jsonData[\"id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"A comment can have a lot of text. A comment can have a lot of text. A comment can have a lot of text. A comment can have a lot of text. A comment can have a lot of text. A comment can have a lot of text. A comment can have a lot of text.\",\n    \"postId\" : {{postId2}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appAddress}}/comments",
+					"host": [
+						"{{appAddress}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update comment",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"A brand new name\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appAddress}}/comments/{{commentId1}}",
+					"host": [
+						"{{appAddress}}"
+					],
+					"path": [
+						"comments",
+						"{{commentId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get comments for post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{appAddress}}/post/{{nonStringPostId1}}/comments",
+					"host": [
+						"{{appAddress}}"
+					],
+					"path": [
+						"post",
+						"{{nonStringPostId1}}",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "e8a3905c-5e35-4de0-a551-355ee2518760",
+			"key": "App address",
+			"value": "localhost:3000"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
