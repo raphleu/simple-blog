@@ -2,7 +2,7 @@ const Post = require('../src/models/post')
 
 test('Should get all posts', () => {
     const posts = Post.getAll()
-    expect(posts.length).toBe(3)
+    expect(posts.length).toBe(4)
 })
 
 test('should find a single post by id', () => {
